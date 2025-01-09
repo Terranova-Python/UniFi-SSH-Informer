@@ -34,8 +34,8 @@ def set_inform(device_ip, controller_ip, username, password):
 
 if __name__ == "__main__":
     # Controller IP and device list
-    controller_ip = "192.168.2.247"
-    device_list = [79, 57, 45, 95, 197, 74, 26, 108, 212, 52, 246, 62, 213, 226, 235, 107, 229, 222, 96, 221]
+    controller_ip = "192.168.1.1" # Replace this with your Controller ip
+    device_list = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] #Reaplce with your camera IP (last octet)
 
     # SSH credentials
     username = "ubnt"  # Replace with the correct username if changed
@@ -43,6 +43,6 @@ if __name__ == "__main__":
 
     # Iterate over each device and perform set-inform
     for last_octet in device_list:
-        device_ip = f"192.168.2.{last_octet}"
+        device_ip = f"192.168.1.{last_octet}"
         print(f"Processing device: {device_ip}")
         set_inform(device_ip, controller_ip, username, password)
